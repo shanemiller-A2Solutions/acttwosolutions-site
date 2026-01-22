@@ -32,55 +32,98 @@
         }
 
         .logo-container img {
-            max-width: 150px; /* Adjust size as needed */
+            max-width: 150px; 
             height: auto;
         }
 
         .hero {
             text-align: center;
-            padding: 60px 20px;
+            padding: 80px 20px;
             background: var(--primary-navy);
             color: var(--white);
         }
 
-        .hero h1 { margin: 0; font-size: 2.5rem; font-weight: 700; }
-        .hero p { font-size: 1.2rem; color: #BDC3C7; margin-top: 10px; }
+        .hero h1 { 
+            margin: 0; 
+            font-size: 2.8rem; 
+            font-weight: 300; /* Lighter font weight is often more elegant */
+            letter-spacing: 1px;
+        }
+        
+        .hero p { 
+            font-size: 1.3rem; 
+            color: #BDC3C7; 
+            margin-top: 15px; 
+            font-weight: 300;
+        }
 
         /* --- Layout --- */
         .container {
             max-width: 900px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 60px 20px;
         }
 
-        section { margin-bottom: 60px; }
-        h2 { color: var(--primary-navy); border-bottom: 2px solid var(--secondary-grey); padding-bottom: 10px; display: inline-block; }
+        section { margin-bottom: 80px; }
+        
+        h2 { 
+            color: var(--primary-navy); 
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 1.5rem;
+            border-bottom: 2px solid var(--secondary-grey); 
+            padding-bottom: 10px; 
+            display: inline-block; 
+            margin-bottom: 30px;
+        }
 
-        /* --- Projects Grid --- */
-        .project-grid {
+        /* --- Services Grid --- */
+        .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
         }
 
-        .project-card {
+        .service-card {
             background: var(--white);
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.2s;
+            padding: 30px;
+            border-radius: 4px; /* Slightly sharper corners for a professional look */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease;
+            border-top: 4px solid var(--primary-navy);
         }
         
-        .project-card:hover { transform: translateY(-5px); }
-        .project-card h3 { margin-top: 0; color: var(--primary-navy); }
-        .badge {
-            background: var(--secondary-grey);
-            color: white;
-            padding: 3px 8px;
+        .service-card:hover { transform: translateY(-3px); }
+        
+        .service-card h3 { 
+            margin-top: 0; 
+            color: var(--primary-navy); 
+            font-size: 1.25rem;
+        }
+
+        /* --- Contact Section --- */
+        .contact-box {
+            background: var(--white);
+            padding: 40px;
+            text-align: center;
             border-radius: 4px;
-            font-size: 0.8rem;
-            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .contact-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background-color: var(--primary-navy);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: background-color 0.2s;
+        }
+
+        .contact-button:hover {
+            background-color: var(--secondary-grey);
         }
 
         /* --- Footer --- */
@@ -88,10 +131,11 @@
             text-align: center;
             padding: 40px 20px;
             background: var(--primary-navy);
-            color: #bdc3c7;
-            font-size: 0.9rem;
+            color: #7F8C8D;
+            font-size: 0.85rem;
         }
-        footer a { color: var(--white); text-decoration: none; }
+        footer a { color: #BDC3C7; text-decoration: none; transition: color 0.2s;}
+        footer a:hover { color: var(--white); }
     </style>
 </head>
 <body>
@@ -103,48 +147,50 @@
     </header>
 
     <div class="hero">
-        <h1>Building the Future</h1>
-        <p>Specializing in Generative AI & iOS Development</p>
+        <h1>Technology, Simplified.</h1>
+        <p>Bespoke software solutions designed to enhance your work and life.</p>
     </div>
 
     <div class="container">
+        
         <section id="about">
-            <h2>About</h2>
-            <p>Act Two Solutions LLC is a Wisconsin-based software development studio focused on creating intelligent, user-centric mobile applications. We leverage the latest in Generative AI and Swift technologies to solve real-world problems.</p>
+            <h2>Our Philosophy</h2>
+            <p style="font-size: 1.1rem; color: #555;">
+                At Act Two Solutions, we believe that technology should serve people, not the other way around. Based in Wisconsin, we specialize in crafting elegant digital experiences that remove friction from your daily tasks. Whether streamlining business workflows or simplifying personal organization, our goal is to return time and clarity to your day.
+            </p>
         </section>
 
-        <section id="apps">
-            <h2>Our Apps</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <span class="badge">Finance</span>
-                    <h3>Penny</h3>
-                    <p>An AI-powered expense tracker that simplifies personal finance management.</p>
+        <section id="services">
+            <h2>What We Do</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>iOS Development</h3>
+                    <p>We build native mobile applications that feel intuitive and responsive. From concept to the App Store, we prioritize clean code and user-centric design principles.</p>
                 </div>
                 
-                <div class="project-card">
-                    <span class="badge">Gaming</span>
-                    <h3>Keeper of the Realms</h3>
-                    <p>Immersive tools for tabletop RPG enthusiasts and dungeon masters.</p>
+                <div class="service-card">
+                    <h3>Generative AI Integration</h3>
+                    <p>Artificial Intelligence shouldn't be a buzzword—it should be a utility. We implement practical AI solutions that automate complex reasoning and content generation tailored to your specific needs.</p>
                 </div>
 
-                <div class="project-card">
-                    <span class="badge">In Development</span>
-                    <h3>Forensic Analysis Tool</h3>
-                    <p>Advanced cold case analysis utilizing generative AI patterns.</p>
+                <div class="service-card">
+                    <h3>Web Solutions</h3>
+                    <p>Robust and scalable web development that bridges the gap between your data and your users, ensuring accessibility and performance across all devices.</p>
                 </div>
             </div>
         </section>
 
         <section id="contact">
-            <h2>Support & Contact</h2>
-            <p>Have a question about one of our apps or want to get in touch?</p>
-            <p><strong>Email:</strong> <a href="mailto:shanemiller@acttwosolutions.com" style="color: var(--primary-navy)">shanemiller@acttwosolutions.com</a></p>
+            <div class="contact-box">
+                <h2>Connect With Us</h2>
+                <p>Ready to streamline your next project? We are currently accepting new inquiries.</p>
+                <a href="mailto:shane@acttwosolutions.com" class="contact-button">Contact Us</a>
+            </div>
         </section>
     </div>
 
     <footer>
-        <p>&copy; 2026 Act Two Solutions LLC. All rights reserved.</p>
+        <p>&copy; 2026 Act Two Solutions LLC. All rights reserved.<br>Manitowoc, WI</p>
         <p><a href="privacy.html">Privacy Policy</a></p>
     </footer>
 
