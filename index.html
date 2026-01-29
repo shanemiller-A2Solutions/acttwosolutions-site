@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Act Two Solutions LLC</title>
+    <title>Act Two Solutions LLC | AI-Driven Forensic Intelligence</title>
     <style>
-        /* --- Color Palette based on your Logo --- */
+        /* --- Color Palette --- */
         :root {
-            --primary-navy: #2C3E50; /* Matches the dark triangle/text */
-            --secondary-grey: #7F8C8D; /* Matches 'SOLUTIONS' */
+            --primary-navy: #2C3E50;
+            --secondary-grey: #7F8C8D;
+            --accent-blue: #3498DB;
             --bg-light: #F9F9F9;
             --text-main: #333;
             --white: #ffffff;
@@ -23,7 +24,6 @@
             background-color: var(--bg-light);
         }
 
-        /* --- Header & Hero --- */
         header {
             background-color: var(--white);
             padding: 20px 0;
@@ -46,7 +46,7 @@
         .hero h1 { 
             margin: 0; 
             font-size: 2.8rem; 
-            font-weight: 300; /* Lighter font weight is often more elegant */
+            font-weight: 300;
             letter-spacing: 1px;
         }
         
@@ -54,10 +54,11 @@
             font-size: 1.3rem; 
             color: #BDC3C7; 
             margin-top: 15px; 
-            font-weight: 300;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        /* --- Layout --- */
         .container {
             max-width: 900px;
             margin: 0 auto;
@@ -77,65 +78,42 @@
             margin-bottom: 30px;
         }
 
-        /* --- Services Grid --- */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .service-card {
-            background: var(--white);
-            padding: 30px;
-            border-radius: 4px; /* Slightly sharper corners for a professional look */
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            transition: transform 0.2s ease;
-            border-top: 4px solid var(--primary-navy);
-        }
-        
-        .service-card:hover { transform: translateY(-3px); }
-        
-        .service-card h3 { 
-            margin-top: 0; 
-            color: var(--primary-navy); 
-            font-size: 1.25rem;
-        }
-
-        /* --- Contact Section --- */
-        .contact-box {
+        /* --- Product Feature Box --- */
+        .product-highlight {
             background: var(--white);
             padding: 40px;
-            text-align: center;
-            border-radius: 4px;
+            border-radius: 8px;
+            border-left: 5px solid var(--accent-blue);
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
 
-        .contact-button {
+        .stage-badge {
             display: inline-block;
-            margin-top: 20px;
-            padding: 12px 30px;
-            background-color: var(--primary-navy);
-            color: var(--white);
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: 600;
-            transition: background-color 0.2s;
+            background: var(--accent-blue);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 10px;
         }
 
-        .contact-button:hover {
-            background-color: var(--secondary-grey);
+        .team-grid {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            background: #eee;
+            padding: 30px;
+            border-radius: 8px;
         }
 
-        /* --- Footer --- */
-        footer {
+        .footer {
             text-align: center;
             padding: 40px 20px;
             background: var(--primary-navy);
             color: #7F8C8D;
             font-size: 0.85rem;
         }
-        footer a { color: #BDC3C7; text-decoration: none; transition: color 0.2s;}
-        footer a:hover { color: var(--white); }
     </style>
 </head>
 <body>
@@ -147,51 +125,55 @@
     </header>
 
     <div class="hero">
-        <h1>Technology, Simplified.</h1>
-        <p>Bespoke software solutions designed to enhance your work and life.</p>
+        <h1>Transforming Investigations with Generative AI</h1>
+        <p>Act Two Solutions is building the next generation of digital tools for law enforcement and legal professionals.</p>
     </div>
 
     <div class="container">
         
-        <section id="about">
-            <h2>Our Philosophy</h2>
+        <section id="mission">
+            <h2>Our Mission</h2>
             <p style="font-size: 1.1rem; color: #555;">
-                At Act Two Solutions, we believe that technology should serve people, not the other way around. Based in Wisconsin, we specialize in crafting elegant digital experiences that remove friction from your daily tasks. Whether streamlining business workflows or simplifying personal organization, our goal is to return time and clarity to your day.
+                Based in Wisconsin, Act Two Solutions LLC develops specialized software that leverages large language models (LLMs) to solve complex data challenges. We focus on sectors where massive amounts of unstructured data—such as case files, transcripts, and records—create bottlenecks for human investigators. Our goal is to provide clarity and actionable intelligence through secure, intuitive digital products.
             </p>
         </section>
 
-        <section id="services">
-            <h2>What We Do</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>iOS Development</h3>
-                    <p>We build native mobile applications that feel intuitive and responsive. From concept to the App Store, we prioritize clean code and user-centric design principles.</p>
-                </div>
-                
-                <div class="service-card">
-                    <h3>Generative AI Integration</h3>
-                    <p>Artificial Intelligence shouldn't be a buzzword—it should be a utility. We implement practical AI solutions that automate complex reasoning and content generation tailored to your specific needs.</p>
-                </div>
+        <section id="product">
+            <h2>Flagship Product: Forensic-Analysis</h2>
+            <div class="product-highlight">
+                <span class="stage-badge">CURRENT STAGE: MVP / PRIVATE BETA</span>
+                <h3>AI-Powered Cold Case Intelligence</h3>
+                <p><strong>The Problem:</strong> Law enforcement agencies often have thousands of pages of digitized cold case files. Manually cross-referencing names, dates, and locations across decades of paperwork is nearly impossible.</p>
+                <p><strong>The Solution:</strong> Our Forensic-Analysis tool uses a private, secure RAG (Retrieval-Augmented Generation) architecture to allow investigators to "talk" to their case files. It identifies patterns, generates timelines, and surfaces inconsistencies in witness statements automatically.</p>
+                <ul>
+                    <li><strong>Stack:</strong> SwiftUI, Firebase, Node.js, and Google Vertex AI.</li>
+                    <li><strong>Status:</strong> Currently in early-stage stakeholder review with regional law enforcement partners.</li>
+                </ul>
+            </div>
+        </section>
 
-                <div class="service-card">
-                    <h3>Web Solutions</h3>
-                    <p>Robust and scalable web development that bridges the gap between your data and your users, ensuring accessibility and performance across all devices.</p>
+        <section id="team">
+            <h2>The Team</h2>
+            <div class="team-grid">
+                <div>
+                    <h3>Shane E Miller</h3>
+                    <p><strong>Founder & Lead Developer</strong></p>
+                    <p>With a career-long background in technology and a focus on cloud-native architecture, Shane founded Act Two Solutions to apply modern Generative AI to high-impact civic and professional challenges. He leads the technical vision and full-stack development of the Forensic-Analysis platform.</p>
                 </div>
             </div>
         </section>
 
         <section id="contact">
-            <div class="contact-box">
-                <h2>Connect With Us</h2>
-                <p>Ready to streamline your next project? We are currently accepting new inquiries.</p>
-                <a href="mailto:shanemiller@acttwosolutions.com" class="contact-button">Contact Us</a>
+            <div style="text-align: center;">
+                <h2>Inquiries</h2>
+                <p>Interested in a demo or partnership? Contact us at the address below.</p>
+                <p><strong>shanemiller@acttwosolutions.com</strong></p>
             </div>
         </section>
     </div>
 
-    <footer>
+    <footer class="footer">
         <p>&copy; 2026 Act Two Solutions LLC. All rights reserved.<br>Manitowoc, WI</p>
-        <p><a href="privacy.html">Privacy Policy</a></p>
     </footer>
 
 </body>
