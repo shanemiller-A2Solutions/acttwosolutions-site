@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Act Two Solutions LLC | AI-Driven Forensic Intelligence</title>
     <style>
-        /* --- Color Palette --- */
         :root {
             --primary-navy: #2C3E50;
             --secondary-grey: #7F8C8D;
@@ -45,13 +44,13 @@
 
         .hero h1 { 
             margin: 0; 
-            font-size: 2.8rem; 
+            font-size: 2.5rem; 
             font-weight: 300;
             letter-spacing: 1px;
         }
         
         .hero p { 
-            font-size: 1.3rem; 
+            font-size: 1.2rem; 
             color: #BDC3C7; 
             margin-top: 15px; 
             max-width: 800px;
@@ -60,9 +59,9 @@
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 60px 20px;
+            padding: 40px 20px;
         }
 
         section { margin-bottom: 80px; }
@@ -71,20 +70,49 @@
             color: var(--primary-navy); 
             text-transform: uppercase;
             letter-spacing: 1px;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             border-bottom: 2px solid var(--secondary-grey); 
             padding-bottom: 10px; 
             display: inline-block; 
             margin-bottom: 30px;
         }
 
-        /* --- Product Feature Box --- */
-        .product-highlight {
+        /* --- Product Showcase --- */
+        .showcase-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
             background: var(--white);
-            padding: 40px;
+            padding: 30px;
             border-radius: 8px;
-            border-left: 5px solid var(--accent-blue);
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .screenshot-box img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            border: 1px solid #ddd;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .feature-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-blue);
+            font-weight: bold;
         }
 
         .stage-badge {
@@ -93,21 +121,16 @@
             color: white;
             padding: 4px 12px;
             border-radius: 20px;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: bold;
             margin-bottom: 10px;
         }
 
-        .team-grid {
-            display: flex;
-            gap: 30px;
-            align-items: center;
-            background: #eee;
-            padding: 30px;
-            border-radius: 8px;
+        @media (max-width: 768px) {
+            .showcase-container { grid-template-columns: 1fr; }
         }
 
-        .footer {
+        footer {
             text-align: center;
             padding: 40px 20px;
             background: var(--primary-navy);
@@ -125,53 +148,55 @@
     </header>
 
     <div class="hero">
-        <h1>Transforming Investigations with Generative AI</h1>
-        <p>Act Two Solutions is building the next generation of digital tools for law enforcement and legal professionals.</p>
+        <h1>Advanced AI for Investigative Excellence</h1>
+        <p>Act Two Solutions LLC is pioneering secure, Generative AI tools to accelerate the analysis of complex case files and forensic data.</p>
     </div>
 
     <div class="container">
         
-        <section id="mission">
-            <h2>Our Mission</h2>
-            <p style="font-size: 1.1rem; color: #555;">
-                Based in Wisconsin, Act Two Solutions LLC develops specialized software that leverages large language models (LLMs) to solve complex data challenges. We focus on sectors where massive amounts of unstructured data—such as case files, transcripts, and records—create bottlenecks for human investigators. Our goal is to provide clarity and actionable intelligence through secure, intuitive digital products.
-            </p>
-        </section>
-
         <section id="product">
-            <h2>Flagship Product: Forensic-Analysis</h2>
-            <div class="product-highlight">
-                <span class="stage-badge">CURRENT STAGE: MVP / PRIVATE BETA</span>
-                <h3>AI-Powered Cold Case Intelligence</h3>
-                <p><strong>The Problem:</strong> Law enforcement agencies often have thousands of pages of digitized cold case files. Manually cross-referencing names, dates, and locations across decades of paperwork is nearly impossible.</p>
-                <p><strong>The Solution:</strong> Our Forensic-Analysis tool uses a private, secure RAG (Retrieval-Augmented Generation) architecture to allow investigators to "talk" to their case files. It identifies patterns, generates timelines, and surfaces inconsistencies in witness statements automatically.</p>
-                <ul>
-                    <li><strong>Status:</strong> Currently in early-stage stakeholder review with regional law enforcement partners.</li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="team">
-            <h2>The Team</h2>
-            <div class="team-grid">
-                <div>
-                    <h3>Shane E Miller</h3>
-                    <p><strong>Founder & Lead Developer</strong></p>
-                    <p>With a career-long background in technology and a focus on cloud-native architecture, Shane founded Act Two Solutions to apply modern Generative AI to high-impact civic and professional challenges. He leads the technical vision and full-stack development of the Forensic-Analysis platform.</p>
+            <h2>Our Flagship Product: Forensic-Analysis</h2>
+            <div class="showcase-container">
+                <div class="screenshot-box">
+                    <img src="ForensicAnalysisAppScreenShot.jpg" alt="Forensic Analysis App Dashboard Interface">
+                    <p style="font-size: 0.8rem; color: #777; text-align: center; margin-top: 10px;">
+                        <i>Note: Data anonymized for security and confidentiality.</i>
+                    </p>
+                </div>
+                <div class="product-info">
+                    <span class="stage-badge">CURRENT STAGE: PRIVATE BETA</span>
+                    <h3>The Intelligence Dashboard</h3>
+                    <p>Our platform transforms massive volumes of unstructured investigative data into actionable insights using a secure, private RAG (Retrieval-Augmented Generation) architecture.</p>
+                    
+                    <ul class="feature-list">
+                        <li><strong>Seamless Case Import:</strong> Easily ingest thousands of pages of digitized case files, reports, and transcripts.</li>
+                        <li><strong>Automated Master Timelines:</strong> Automatically extract dates and events to build interactive, chronological investigation maps.</li>
+                        <li><strong>Evidence Cataloging:</strong> Instant identification and categorization of physical and digital evidence items.</li>
+                        <li><strong>Entity & Relationship Mapping:</strong> Identify People of Interest and visualize complex social and criminal relationships across documents.</li>
+                        <li><strong>Deep Statement Analysis:</strong> Cross-reference witness statements to identify inconsistencies or corroborating patterns.</li>
+                        <li><strong>"Interrogate" the File:</strong> Chat directly with your case files using <strong>Detective AI</strong> to find specific answers in seconds.</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <section id="contact">
-            <div style="text-align: center;">
-                <h2>Inquiries</h2>
-                <p>Interested in a demo or partnership? Contact us at the address below.</p>
+        <section id="about">
+            <h2>Founder & Team</h2>
+            <p style="font-size: 1.1rem; color: #555;">
+                <strong>Shane E Miller</strong> founded Act Two Solutions LLC following a distinguished career in technology. Based in Manitowoc, Wisconsin, Shane leverages his expertise in mobile and cloud-native software—using stacks like SwiftUI, Firebase, and Google Vertex AI—to build digital products that serve the public interest and solve the most difficult data-organization problems facing investigators today.
+            </p>
+        </section>
+
+        <section id="contact" style="text-align: center;">
+            <div style="background: white; padding: 40px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                <h2>Connect With Us</h2>
+                <p>We are currently looking for pilot partners in the law enforcement and legal sectors.</p>
                 <p><strong>shanemiller@acttwosolutions.com</strong></p>
             </div>
         </section>
     </div>
 
-    <footer class="footer">
+    <footer>
         <p>&copy; 2026 Act Two Solutions LLC. All rights reserved.<br>Manitowoc, WI</p>
     </footer>
 
