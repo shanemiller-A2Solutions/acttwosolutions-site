@@ -135,6 +135,29 @@
             margin-top: 40px;
         }
 
+        /* --- Technical Architecture Section --- */
+        .tech-stack-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .tech-item {
+            background: #fff;
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            border: 1px solid #e0e0e0;
+            font-size: 0.9rem;
+        }
+
+        .tech-item strong {
+            display: block;
+            color: var(--primary-navy);
+            margin-bottom: 5px;
+        }
+
         .team-profile {
             display: flex;
             gap: 30px;
@@ -232,6 +255,18 @@
                 <span>✓ CJIS Compliant Architecture</span>
                 <span>✓ Google Vertex AI Integration</span>
                 <span>✓ Private Data Sovereignty</span>
+            </div>
+        </section>
+
+        <section id="architecture">
+            <h2>Security-First Architecture</h2>
+            <p>To meet the rigorous standards of forensic data management, Forensic-Analysis is built exclusively on high-performance <strong>Google Cloud</strong> infrastructure, ensuring data isolation and maximum uptime.</p>
+            <div class="tech-stack-grid">
+                <div class="tech-item"><strong>Identity Platform</strong> Secure, multi-factor authentication for investigators.</div>
+                <div class="tech-item"><strong>Cloud Run</strong> Serverless execution for highly responsive AI processing.</div>
+                <div class="tech-item"><strong>Cloud SQL</strong> Enterprise-grade, encrypted relational data storage.</div>
+                <div class="tech-item"><strong>VPC Networks</strong> Private, isolated networking to ensure data never touches the public internet.</div>
+                <div class="tech-item"><strong>Firebase</strong> Real-time synchronization for collaborative investigations.</div>
             </div>
         </section>
 
