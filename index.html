@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forensic-Analysis | AI Intelligence for Major Crimes</title>
+    <title>CaseSense | AI Intelligence for Major Crimes</title>
     <style>
         :root {
             --primary-navy: #1a252f;
-            --accent-blue: #3498DB;
+            --accent-blue: #2980b9;
+            --accent-light: #3498DB;
             --bg-light: #f4f6f9;
             --text-main: #333;
             --white: #ffffff;
@@ -36,17 +37,20 @@
             z-index: 1000;
         }
 
+        /* The "Text Logo" - Professional & Clean */
         .nav-logo {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             font-weight: 800;
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             color: var(--primary-navy);
             text-decoration: none;
+            letter-spacing: -0.5px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
-
-        .nav-logo img { height: 30px; }
+        
+        .nav-logo span { color: var(--accent-light); }
 
         .nav-links {
             display: flex;
@@ -58,6 +62,7 @@
             color: #555;
             font-weight: 500;
             font-size: 0.95rem;
+            transition: color 0.2s;
         }
 
         .nav-links a:hover { color: var(--accent-blue); }
@@ -77,98 +82,111 @@
         .btn-primary {
             background-color: var(--accent-blue);
             color: white;
-            padding: 8px 20px;
+            padding: 8px 24px;
             border-radius: 4px;
             text-decoration: none;
             font-weight: 600;
             transition: background 0.2s;
         }
         
-        .btn-primary:hover { background-color: #2980b9; }
+        .btn-primary:hover { background-color: #1c5a85; }
 
         /* --- Hero Section --- */
         .hero {
             text-align: center;
-            padding: 100px 20px 80px;
+            padding: 100px 20px 120px; /* Extra padding at bottom for overlap */
             background: var(--primary-navy);
             color: var(--white);
         }
 
         .hero h1 { 
             margin: 0; 
-            font-size: 3rem; 
-            font-weight: 700;
-            letter-spacing: -1px;
-            line-height: 1.2;
+            font-size: 3.5rem; 
+            font-weight: 800;
+            letter-spacing: -1.5px;
+            line-height: 1.1;
         }
         
         .hero p { 
-            font-size: 1.25rem; 
+            font-size: 1.4rem; 
             color: #bdc3c7; 
-            margin-top: 20px; 
-            max-width: 700px;
+            margin-top: 25px; 
+            max-width: 800px;
             margin-left: auto;
             margin-right: auto;
+            font-weight: 300;
         }
 
         .container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 60px 20px;
+            padding: 0 20px 80px;
         }
 
         h2 { 
             color: var(--primary-navy); 
-            font-size: 1.8rem;
+            font-size: 2rem;
             margin-bottom: 40px;
             text-align: center;
+            font-weight: 700;
         }
 
         /* --- Product Interface Showcase --- */
         .product-showcase {
             background: var(--white);
             border-radius: 12px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            box-shadow: 0 25px 80px rgba(0,0,0,0.15);
             overflow: hidden;
-            margin-top: -60px; /* Overlap hero */
+            margin-top: -80px; /* Strong overlap with hero */
             border: 1px solid var(--border);
+            margin-bottom: 80px;
         }
 
         .product-showcase img { width: 100%; display: block; }
 
-        /* --- How It Works (Software Steps) --- */
-        .steps-grid {
+        /* --- Problem/Solution Section --- */
+        .problem-solution {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            margin-bottom: 100px;
+        }
+        
+        .text-block h3 {
+            font-size: 1.8rem;
+            color: var(--primary-navy);
+            margin-top: 0;
+        }
+
+        .text-block p {
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        /* --- Feature Grid --- */
+        .features-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 30px;
-            margin-top: 50px;
+            margin-bottom: 80px;
         }
 
-        .step-card {
-            text-align: center;
+        .feature-card {
+            background: var(--white);
             padding: 30px;
+            border-radius: 8px;
+            border-top: 4px solid var(--accent-light);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            transition: transform 0.2s;
         }
 
-        .step-icon {
-            font-size: 2rem;
-            color: var(--accent-blue);
-            margin-bottom: 20px;
-            display: block;
-        }
+        .feature-card:hover { transform: translateY(-5px); }
 
-        /* --- Use Cases Grid --- */
-        .use-case-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin-bottom: 60px;
-        }
-
-        .use-case-card {
-            background: #fff;
-            padding: 20px;
-            border-left: 4px solid var(--accent-blue);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        .feature-card h4 {
+            margin-top: 0;
+            font-size: 1.2rem;
+            color: var(--primary-navy);
         }
 
         /* --- Pricing/Tiers --- */
@@ -177,7 +195,7 @@
             grid-template-columns: repeat(2, 1fr);
             gap: 30px;
             max-width: 800px;
-            margin: 0 auto;
+            margin: 0 auto 80px;
         }
 
         .pricing-card {
@@ -189,8 +207,22 @@
         }
 
         .pricing-card.featured {
-            border-top: 5px solid var(--accent-blue);
+            border: 2px solid var(--accent-blue);
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            position: relative;
+        }
+        
+        .badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent-blue);
+            color: white;
+            padding: 4px 12px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            border-radius: 20px;
         }
 
         .price {
@@ -205,42 +237,44 @@
         /* --- Tech Stack Banner --- */
         .tech-banner {
             background: #eef2f7;
-            padding: 40px;
+            padding: 50px;
             border-radius: 8px;
             text-align: center;
-            margin-top: 80px;
+            margin-bottom: 80px;
         }
         
         .tech-tags {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 15px;
             flex-wrap: wrap;
-            margin-top: 20px;
+            margin-top: 25px;
         }
 
         .tech-tag {
             background: var(--white);
-            padding: 8px 16px;
-            border-radius: 20px;
+            padding: 10px 20px;
+            border-radius: 30px;
             font-weight: 600;
             color: var(--primary-navy);
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            border: 1px solid #dcdcdc;
         }
 
         /* --- Footer --- */
         footer {
-            margin-top: 80px;
-            padding: 40px 0;
+            padding: 60px 0;
             border-top: 1px solid var(--border);
             text-align: center;
             font-size: 0.9rem;
             color: #777;
+            background: #fff;
         }
 
         @media (max-width: 768px) {
             .nav-links { display: none; }
-            .steps-grid, .pricing-grid, .use-case-grid { grid-template-columns: 1fr; }
+            .problem-solution, .features-grid, .pricing-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.5rem; }
         }
     </style>
 </head>
@@ -248,14 +282,13 @@
 
     <nav>
         <a href="#" class="nav-logo">
-            <img src="A2logo.png" alt="Logo">
-            Forensic-Analysis
+            Case<span>Sense</span>
         </a>
         <div class="nav-links">
-            <a href="#features">Platform</a>
+            <a href="#product">Platform</a>
+            <a href="#features">Features</a>
             <a href="#security">Security</a>
             <a href="#pricing">Licensing</a>
-            <a href="#company">About</a>
         </div>
         <div class="nav-auth">
             <a href="#" class="btn-login">Login</a>
@@ -264,49 +297,71 @@
     </nav>
 
     <div class="hero">
-        <h1>Accelerate Major Crime Investigations.</h1>
-        <p>From active Homicides to complex Missing Persons files. The secure, AI-native platform that helps detectives determine "who did it" faster.</p>
+        <h1>Making Sense of<br>the Evidence.</h1>
+        <p>The secure, AI-native intelligence platform that helps detectives accelerate Speed to Insight on major crimes and cold cases.</p>
     </div>
 
     <div class="container">
         
         <div class="product-showcase">
-            <img src="ForensicAnalysisAppScreenShot.png" alt="Forensic Analysis Platform Interface">
+            <img src="ForensicAnalysisAppScreenShot.png" alt="CaseSense Platform Interface">
         </div>
 
+        <section id="product" class="problem-solution">
+            <div class="text-block">
+                <h3>The 2,000-Page Problem</h3>
+                <p>A single case file often exceeds 2,000 pages of reports, transcripts, and evidence logs. The human mind simply cannot recall a witness conflict on page 27 while analyzing page 2,027.</p>
+                <p><strong>CaseSense</strong> bridges this cognitive gap. By instantly cross-referencing every word in your case file, our platform surfaces hidden connections and inconsistencies in seconds.</p>
+            </div>
+            <div class="text-block" style="background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 5px solid var(--accent-blue);">
+                <h4 style="margin-top: 0; color: var(--accent-blue);">CaseSense Impact</h4>
+                <ul style="padding-left: 20px; line-height: 1.8;">
+                    <li><strong>Accelerated Review:</strong> Analyze years of reports in minutes.</li>
+                    <li><strong>Cognitive Offload:</strong> Let AI track the dates and names.</li>
+                    <li><strong>Lead Generation:</strong> Uncover patterns missed by human review.</li>
+                </ul>
+            </div>
+        </section>
+
         <section id="features">
-            <h2>Built for Complex Investigations</h2>
-            <div class="use-case-grid">
-                <div class="use-case-card">
-                    <h4>Homicide</h4>
-                    <p>Rapidly cross-reference witness statements, timelines, and physical evidence in high-stakes murder investigations.</p>
+            <h2>Platform Capabilities</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h4>Automated Timelines</h4>
+                    <p>Stop manual logging. CaseSense automatically extracts dates and events to build interactive, chronological investigation maps.</p>
                 </div>
-                <div class="use-case-card">
-                    <h4>Missing Persons</h4>
-                    <p>Connect disparate data points across years of reports to find patterns others missed.</p>
+                <div class="feature-card">
+                    <h4>Entity Mapping</h4>
+                    <p>Visualize the hidden web of relationships between suspects, victims, and witnesses across thousands of documents.</p>
                 </div>
-                <div class="use-case-card">
-                    <h4>Cold Cases</h4>
-                    <p>Digitize and interrogate massive legacy files to breathe new life into dormant investigations.</p>
+                <div class="feature-card">
+                    <h4>Detective AI</h4>
+                    <p>Interrogate your files naturally. Ask <i>"Where was the suspect on Tuesday?"</i> and get an answer with a direct link to the source.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Tap-to-Verify</h4>
+                    <p>We believe in "Trust but Verify." Every AI insight is one tap away from the original PDF source document.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Continuous Monitoring</h4>
+                    <p>The investigator that never rests. CaseSense monitors files 24/7, alerting you if new evidence conflicts with old statements.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Evidence Synthesis</h4>
+                    <p>Instantly catalog physical evidence items and flag potential missing links or chain-of-custody gaps.</p>
                 </div>
             </div>
+        </section>
 
-            <div class="steps-grid">
-                <div class="step-card">
-                    <span class="step-icon">📂</span>
-                    <h3>1. Centralize Evidence</h3>
-                    <p>Securely ingest thousands of case files, PDFs, and evidence logs. Whether the case is 48 hours old or 20 years old.</p>
-                </div>
-                <div class="step-card">
-                    <span class="step-icon">⚡</span>
-                    <h3>2. AI-Driven Insight</h3>
-                    <p>Our Vertex AI engine automatically builds master timelines, maps suspect relationships, and flags statement inconsistencies.</p>
-                </div>
-                <div class="step-card">
-                    <span class="step-icon">🔍</span>
-                    <h3>3. Close Cases</h3>
-                    <p>Detectives interrogate the data using natural language to uncover the "needle in the haystack" that solves the crime.</p>
-                </div>
+        <section class="tech-banner" id="security">
+            <h3>Built on Google Cloud Security</h3>
+            <p>Our CJIS-compliant infrastructure is designed for zero-trust environments.</p>
+            <div class="tech-tags">
+                <div class="tech-tag">Vertex AI</div>
+                <div class="tech-tag">Cloud Run</div>
+                <div class="tech-tag">Cloud SQL</div>
+                <div class="tech-tag">VPC Service Controls</div>
+                <div class="tech-tag">Identity Platform</div>
             </div>
         </section>
 
@@ -314,7 +369,7 @@
             <h2>Agency Licensing</h2>
             <div class="pricing-grid">
                 <div class="pricing-card">
-                    <h3>Standard</h3>
+                    <h3>Standard Unit</h3>
                     <div class="price">Cloud <span>/ seat</span></div>
                     <p>For individual investigators and small units.</p>
                     <ul style="list-style: none; padding: 0; margin-bottom: 20px; color: #555;">
@@ -325,7 +380,8 @@
                     <a href="#contact" class="btn-login" style="border: 1px solid #ccc; border-radius: 4px;">Contact Sales</a>
                 </div>
                 <div class="pricing-card featured">
-                    <h3>Enterprise</h3>
+                    <div class="badge">MOST POPULAR</div>
+                    <h3>Enterprise Division</h3>
                     <div class="price">Serverless <span>/ volume</span></div>
                     <p>Full deployment for Major Crimes Divisions.</p>
                     <ul style="list-style: none; padding: 0; margin-bottom: 20px; color: #555;">
@@ -338,32 +394,20 @@
             </div>
         </section>
 
-        <section class="tech-banner" id="security">
-            <h3>Built on Google Cloud Security</h3>
-            <p>Our infrastructure is designed for zero-trust environments.</p>
-            <div class="tech-tags">
-                <div class="tech-tag">Vertex AI</div>
-                <div class="tech-tag">Cloud Run</div>
-                <div class="tech-tag">Cloud SQL</div>
-                <div class="tech-tag">VPC Service Controls</div>
-                <div class="tech-tag">Identity Platform</div>
-            </div>
-        </section>
-
         <section id="company" style="margin-top: 80px;">
             <div style="background: white; padding: 40px; border-radius: 8px; display: flex; align-items: center; gap: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
                 <img src="ShaneMiller.jpg" alt="Shane E Miller" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover;">
                 <div>
                     <h3 style="margin-top: 0;">Leadership</h3>
                     <p><strong>Shane E Miller, Founder & Principal Architect</strong></p>
-                    <p>With 30+ years in software engineering, Shane leads the development of Forensic-Analysis, leveraging cloud-native architecture to modernize criminal investigations.</p>
+                    <p>With 30+ years in software engineering, Shane leads the development of CaseSense, leveraging cloud-native architecture to modernize criminal investigations.</p>
                     <a href="https://www.linkedin.com/in/millershane/" style="color: var(--accent-blue); text-decoration: none; font-weight: 600;">View LinkedIn Profile &rarr;</a>
                 </div>
             </div>
         </section>
 
         <section id="contact" style="text-align: center; margin-top: 60px;">
-            <p style="color: #777;">Forensic-Analysis is a product of Act Two Solutions LLC.</p>
+            <p style="color: #777;">CaseSense is a product of Act Two Solutions LLC.</p>
             <p><a href="mailto:shanemiller@acttwosolutions.com" style="color: var(--accent-blue);">shanemiller@acttwosolutions.com</a></p>
         </section>
 
@@ -374,7 +418,7 @@
         <p>
             <a href="#">Privacy Policy</a> | 
             <a href="#">Terms of Service</a> | 
-            <a href="#">Status</a>
+            <a href="#">System Status</a>
         </p>
     </footer>
 
